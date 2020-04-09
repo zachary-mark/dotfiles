@@ -1,7 +1,10 @@
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+[-f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
+[-f /usr/local/etc/bash_completion.d/git-prompt.bash ] && source /usr/local/etc/bash_completion.d/git-prompt.bash
 
 alias ls="ls -G"
+
+export PATH=~/bin:$PATH
+eval "$(rbenv init -)"
 
 # get current branch in git repo
 function parse_git_branch() {
