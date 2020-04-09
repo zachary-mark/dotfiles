@@ -18,7 +18,7 @@ priority_source \
   ~/bin/git-bash/git-prompt.sh \
   /usr/local/etc/bash_completion.d/git-prompt.sh
 
-alias ls="ls -G"
+alias ls="ls -G --color=auto"
 
 export PATH=~/bin:$PATH
 eval "$(rbenv init -)"
