@@ -11,11 +11,11 @@ function priority_source() {
 }
 
 priority_source \
-  ~/bin/git-completion.bash \
+  ~/bin/git-bash/git-completion.bash \
   /usr/local/etc/bash_completion.d/git-completion.bash
 
 priority_source \
-  ~/bin/git-prompt.sh \
+  ~/bin/git-bash/git-prompt.sh \
   /usr/local/etc/bash_completion.d/git-prompt.sh
 
 alias ls="ls -G"
