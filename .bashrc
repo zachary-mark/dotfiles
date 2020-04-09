@@ -1,5 +1,22 @@
-[-f /usr/local/etc/bash_completion.d/git-completion.bash ] && source /usr/local/etc/bash_completion.d/git-completion.bash
-[-f /usr/local/etc/bash_completion.d/git-prompt.bash ] && source /usr/local/etc/bash_completion.d/git-prompt.bash
+
+function priority_source() {
+  for source_path in "$@"
+  do
+    if [ -f $source_path ] ; then
+      source $source_path
+      return 0
+    fi
+  done
+  return 1
+}
+
+priority_source \
+  ~/bin/git-completion.bash \
+  /usr/local/etc/bash_completion.d/git-completion.bash
+
+priority_source \
+  ~/bin/git-prompt.sh \
+  /usr/local/etc/bash_completion.d/git-prompt.sh
 
 alias ls="ls -G"
 
