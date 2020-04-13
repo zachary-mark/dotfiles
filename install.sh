@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -a \
+cp -av \
   .bashrc \
   .vimrc \
   bin \
