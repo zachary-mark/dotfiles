@@ -29,4 +29,4 @@ function parse_git_branch() {
 }
 
 export PS1="\[\e[1;32m\]\u\[\e[m\]\[\e[1;32m\]@\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\[\e[1;32m\]:\[\e[m\]\[\e[34m\]\w\[\e[m\]\[\e[35m\]\`parse_git_branch\`\[\e[m\]\[\e[m\]\[\e[35m\]\\$\[\e[m\] "
-
+export EDITOR=vi
