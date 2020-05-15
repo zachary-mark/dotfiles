@@ -19,6 +19,7 @@ priority_source \
   /usr/local/etc/bash_completion.d/git-prompt.sh
 
 alias ls="ls -G"
+alias mergehistory="git log --merges --pretty=format:\"%h ; %ae ; %aD ; %s\""
 
 export PATH=~/bin:$PATH
 eval "$(rbenv init -)"
