@@ -6,4 +6,6 @@ cp -av \
   $base_path/.bash_profile \
   $base_path/.vimrc \
   $base_path/bin \
+  $base_path/.alacritty.conf \
+  $base_path/.tmux.conf \
   ~
