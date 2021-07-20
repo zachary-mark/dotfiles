@@ -8,4 +8,5 @@ cp -av \
   $base_path/bin \
   $base_path/.alacritty.yml \
   $base_path/.tmux.conf \
+  $base_path/.gitconfig \
   ~
