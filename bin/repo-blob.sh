@@ -3,16 +3,22 @@
 
 set -e
 
-if [ "$#" -ne 1 ]; then
+file_path=""
+if [ "$#" -eq 1 ]; then
+  file_path="$1"
+  shift
+fi
+
+if [ "$#" -gt 0 ]; then
   echo "usage: $0 <relative-repo-path>"
   exit 1
 fi
+
 
 BASE_URL="https://github.com"
 repo_nwo=$(git config --get remote.origin.url | tr ':' ' ' | awk '{print $NF}')
 repo_base_dir="$(git rev-parse --show-toplevel)/"
 blob_branch=${BLOB_BRANCH:-$(git status | head -1 | awk '{print $NF}')}
-file_path="$1"
 absolute_file_path="$(pwd)/$file_path"
 
 if [ ! -e "$absolute_file_path" ] ; then
