@@ -15,7 +15,7 @@ blob_branch=${BLOB_BRANCH:-$(git status | head -1 | awk '{print $NF}')}
 file_path="$1"
 absolute_file_path="$(pwd)/$file_path"
 
-if [ ! -f "$absolute_file_path" ] ; then
+if [ ! -e "$absolute_file_path" ] ; then
   echo "error: $absolute_file_path does not exist"
   exit 1
 fi
