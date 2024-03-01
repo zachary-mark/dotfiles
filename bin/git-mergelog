@@ -1,0 +1,29 @@
+#!/bin/bash
+
+BASE_URL="https://github.com"
+repo_nwo=$(git config --get remote.origin.url | tr ':' ' ' | awk '{print $NF}')
+
+URLS=""
+
+if [ "$1" = "--urls" ] ; then
+  URLS="y"
+  shift
+fi
+
+if [ -z "$1" ] ; then
+  echo "usage: $0 [--urls] <revspec>"
+  exit 1
+fi
+
+REVSPEC="$1"
+
+if [ -z "$URLS" ]; then
+  git log --merges --pretty=oneline --grep "Merge pull request" $REVSPEC
+else
+  for pr_num in $( git log --merges --pretty=oneline --grep "Merge pull request" $REVSPEC | awk '{sub(/#/,"") ; print $5}') ; do
+    echo "$BASE_URL/$repo_nwo/pull/$pr_num"
+  done
+fi
+
+
+
