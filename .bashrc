@@ -22,6 +22,10 @@ alias ls="ls -G --color=auto"
 alias mergehistory="git log --merges --pretty=format:\"%h ; %ae ; %aD ; %s\""
 
 export PATH=~/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
 eval "$(rbenv init -)"
 
 # get current branch in git repo
