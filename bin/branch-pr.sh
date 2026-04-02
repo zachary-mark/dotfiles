@@ -6,9 +6,6 @@
 
 set -e
 
-BASE_URL="https://github.com"
 REPO_NWO=$(git remote show -n origin | grep Push | cut -d: -f2- | sed 's/ *git@github.com://g' | sed 's/\.git$//g')
-PR_NUMBER=$(git show-merge $1 | awk '/Merge pull request/{sub("#", "") ; print $4}')
 
-
-echo "$BASE_URL/$REPO_NWO/pull/$PR_NUMBER"
+gh api "/repos/$REPO_NWO/commits/$1/pulls" --jq '.[0].html_url'
